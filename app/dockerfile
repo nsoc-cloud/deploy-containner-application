@@ -1,6 +1,6 @@
 FROM openjdk:11 AS BUILD_IMAGE
 RUN apt update && apt install maven -y
-RUN git clone https://github.com/nsoc-cloud/vprofile-project-docker.git
+RUN git clone https://github.com/nsoc-cloud/deploy-containner-application.git
 RUN CD vprofile-project-docker && maven install
 
 
