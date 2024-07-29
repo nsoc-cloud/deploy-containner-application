@@ -1,0 +1,8 @@
+FROM mysql:8.4.2
+LABEL project="vprofile"
+
+ADD accountsdb.sql /docker-entrypoint-initdb.d
+
+ENV MYSQL_ROOT_PASSWORD="vprodbpass"
+ENV MYSQL_DATABASE="accounts"
+ 
