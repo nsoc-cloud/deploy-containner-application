@@ -19,7 +19,7 @@ services:
     image: memcached
     ports:
       - "11211:11211"
-    container_name: memcached
+    container_name: vprocache01
 
   vpromq01:
     image: rabbitmq
@@ -49,6 +49,7 @@ services:
       dockerfile: dockerfile
     ports:
       - "80:80"
+    container_name: vproweb
 
 volumes:
   vprodbdata: {}
