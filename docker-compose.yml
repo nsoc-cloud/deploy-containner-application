@@ -19,7 +19,7 @@ services:
     image: memcached
     ports:
       - "11211:11211"
-
+    container_name: memcached
 
   vpromq01:
     image: rabbitmq
@@ -28,7 +28,7 @@ services:
     environment:
       - RABBITMQ_DEFAULT_USER=guest
       - RABBITMQ_DEFAULT_PASS=guest
-
+    container_name: vpromq01 
 
   vproapp:
     image: youssefcloud24/vprofileapp
@@ -39,6 +39,7 @@ services:
       - "8080:8080"
     volumes: 
       - vproappdata:/usr/local/tomcat/webapps
+    container_name: vproapp  
 
 
   vproweb:
@@ -48,7 +49,7 @@ services:
       dockerfile: dockerfile
     ports:
       - "80:80"
-      
+
 volumes:
   vprodbdata: {}
   vproappdata: {}
