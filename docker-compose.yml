@@ -22,7 +22,7 @@ services:
     container_name: vprocache01
 
   vpromq01:
-    image: rabbitmq
+    image: bitnami/rabbitmq
     ports:
       - "15672:15672"
     environment:
